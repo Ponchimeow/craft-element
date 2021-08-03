@@ -1,7 +1,9 @@
 import { useNode, UserComponent } from "@craftjs/core";
 import React from "react";
 
-const CraftContainer: UserComponent<{}> = () => {
+const CraftContainer: UserComponent<{
+  setActiveKey: React.Dispatch<React.SetStateAction<string>>;
+}> = ({ setActiveKey }) => {
   const {
     connectors: { connect, drag },
   } = useNode();
@@ -13,6 +15,7 @@ const CraftContainer: UserComponent<{}> = () => {
         padding: `15px 15px`,
         cursor: "pointer",
       }}
+      onClick={() => setActiveKey("settings")}
     />
   );
 };
