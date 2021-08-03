@@ -13,10 +13,11 @@ const CraftContainer: UserComponent<{
       ref={(ref) => ref && connect(drag(ref))}
       style={{
         padding: `15px 15px`,
+        background: "#cccccc",
         cursor: "pointer",
       }}
       onClick={() => setActiveKey("settings")}
-    />
+    ></div>
   );
 };
 
