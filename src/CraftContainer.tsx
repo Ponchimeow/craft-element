@@ -3,7 +3,7 @@ import React from "react";
 
 const CraftContainer: UserComponent<{
   setActiveKey: React.Dispatch<React.SetStateAction<string>>;
-}> = ({ setActiveKey }) => {
+}> = ({ children, setActiveKey }) => {
   const {
     connectors: { connect, drag },
   } = useNode();
@@ -17,7 +17,9 @@ const CraftContainer: UserComponent<{
         cursor: "pointer",
       }}
       onClick={() => setActiveKey("settings")}
-    ></div>
+    >
+      {children}
+    </div>
   );
 };
 

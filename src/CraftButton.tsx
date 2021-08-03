@@ -1,12 +1,5 @@
 import { useNode, UserComponent } from "@craftjs/core";
-import {
-  Button as AntdButton,
-  Checkbox,
-  Form,
-  Input,
-  Radio,
-  Space,
-} from "antd";
+import { Button as AntdButton, Checkbox, Form, Input } from "antd";
 import Collapse, { CollapseProps } from "antd/lib/collapse";
 import { useForm } from "antd/lib/form/Form";
 import styled from "styled-components";
@@ -82,17 +75,7 @@ const CraftButton: UserComponent<
   CraftButtonProps & {
     setActiveKey: React.Dispatch<React.SetStateAction<string>>;
   }
-> = ({
-  title,
-  link,
-  openNewTab,
-  size,
-  block,
-  variant,
-  color,
-  setActiveKey,
-  children,
-}) => {
+> = ({ title, size, block, variant, color, setActiveKey, children }) => {
   const {
     connectors: { connect, drag },
   } = useNode();
