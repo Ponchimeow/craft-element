@@ -95,7 +95,7 @@ const CraftButton: UserComponent<
   );
 };
 
-const ButtonSetting: React.VFC<CollapseProps> = ({ ...collapseProps }) => {
+const ButtonSetting: React.VFC<{ color: string }> = ({ color }) => {
   const [form] = useForm<FieldProps>();
   const {
     actions: { setProp },
@@ -136,7 +136,6 @@ const ButtonSetting: React.VFC<CollapseProps> = ({ ...collapseProps }) => {
       onFinish={handleSubmit}
     >
       <Collapse
-        {...collapseProps}
         className="mt-2 p-0"
         bordered={false}
         expandIconPosition="right"
@@ -169,7 +168,13 @@ const ButtonSetting: React.VFC<CollapseProps> = ({ ...collapseProps }) => {
 
       {selected && (
         <StyledSettingButtonWrapper>
-          <AntdButton className="mb-3" type="primary" block htmlType="submit">
+          <AntdButton
+            className="mb-3"
+            type="primary"
+            block
+            htmlType="submit"
+            style={{ background: `${color}` }}
+          >
             存擋
           </AntdButton>
         </StyledSettingButtonWrapper>
