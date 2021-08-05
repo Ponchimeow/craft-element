@@ -95,7 +95,11 @@ const CraftButton: UserComponent<
   );
 };
 
-const ButtonSetting: React.VFC<{ color: string }> = ({ color }) => {
+const ButtonSetting: React.VFC<{ color?: string; test?: string }> = ({
+  color,
+  test,
+}) => {
+  console.log(test);
   const [form] = useForm<FieldProps>();
   const {
     actions: { setProp },
